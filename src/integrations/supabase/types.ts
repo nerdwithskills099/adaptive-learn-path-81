@@ -14,6 +14,247 @@ export type Database = {
   }
   public: {
     Tables: {
+      assessment_responses: {
+        Row: {
+          assessment_id: string
+          created_at: string | null
+          id: string
+          is_correct: boolean
+          question_id: string
+          selected_answer: number
+          time_taken: number | null
+        }
+        Insert: {
+          assessment_id: string
+          created_at?: string | null
+          id?: string
+          is_correct: boolean
+          question_id: string
+          selected_answer: number
+          time_taken?: number | null
+        }
+        Update: {
+          assessment_id?: string
+          created_at?: string | null
+          id?: string
+          is_correct?: boolean
+          question_id?: string
+          selected_answer?: number
+          time_taken?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assessment_responses_assessment_id_fkey"
+            columns: ["assessment_id"]
+            isOneToOne: false
+            referencedRelation: "assessments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "assessment_responses_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      assessments: {
+        Row: {
+          assessment_type: string
+          completed_at: string | null
+          correct_answers: number | null
+          current_level: number | null
+          id: string
+          is_completed: boolean | null
+          skill_scores: Json | null
+          started_at: string | null
+          student_id: string
+          total_questions: number | null
+        }
+        Insert: {
+          assessment_type?: string
+          completed_at?: string | null
+          correct_answers?: number | null
+          current_level?: number | null
+          id?: string
+          is_completed?: boolean | null
+          skill_scores?: Json | null
+          started_at?: string | null
+          student_id: string
+          total_questions?: number | null
+        }
+        Update: {
+          assessment_type?: string
+          completed_at?: string | null
+          correct_answers?: number | null
+          current_level?: number | null
+          id?: string
+          is_completed?: boolean | null
+          skill_scores?: Json | null
+          started_at?: string | null
+          student_id?: string
+          total_questions?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assessments_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      practice_sessions: {
+        Row: {
+          completed_at: string | null
+          correct_answers: number | null
+          difficulty_level: string | null
+          id: string
+          is_completed: boolean | null
+          practice_mode: string
+          questions_completed: number | null
+          started_at: string | null
+          student_id: string
+          target_skills: string[] | null
+        }
+        Insert: {
+          completed_at?: string | null
+          correct_answers?: number | null
+          difficulty_level?: string | null
+          id?: string
+          is_completed?: boolean | null
+          practice_mode: string
+          questions_completed?: number | null
+          started_at?: string | null
+          student_id: string
+          target_skills?: string[] | null
+        }
+        Update: {
+          completed_at?: string | null
+          correct_answers?: number | null
+          difficulty_level?: string | null
+          id?: string
+          is_completed?: boolean | null
+          practice_mode?: string
+          questions_completed?: number | null
+          started_at?: string | null
+          student_id?: string
+          target_skills?: string[] | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "practice_sessions_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          class_grade: string | null
+          created_at: string | null
+          email: string
+          full_name: string
+          id: string
+          interested_subjects: string[] | null
+          language_preference: string | null
+          parent_id: string | null
+          role: Database["public"]["Enums"]["user_role"]
+          roll_number: string | null
+          school_name: string | null
+          teacher_id: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          class_grade?: string | null
+          created_at?: string | null
+          email: string
+          full_name: string
+          id?: string
+          interested_subjects?: string[] | null
+          language_preference?: string | null
+          parent_id?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          roll_number?: string | null
+          school_name?: string | null
+          teacher_id?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          class_grade?: string | null
+          created_at?: string | null
+          email?: string
+          full_name?: string
+          id?: string
+          interested_subjects?: string[] | null
+          language_preference?: string | null
+          parent_id?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          roll_number?: string | null
+          school_name?: string | null
+          teacher_id?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "profiles_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      questions: {
+        Row: {
+          chapter: string | null
+          correct_answer: number
+          created_at: string | null
+          difficulty: string
+          id: string
+          options: Json
+          skill: string
+          subject: string
+          text: string
+        }
+        Insert: {
+          chapter?: string | null
+          correct_answer: number
+          created_at?: string | null
+          difficulty: string
+          id?: string
+          options: Json
+          skill: string
+          subject: string
+          text: string
+        }
+        Update: {
+          chapter?: string | null
+          correct_answer?: number
+          created_at?: string | null
+          difficulty?: string
+          id?: string
+          options?: Json
+          skill?: string
+          subject?: string
+          text?: string
+        }
+        Relationships: []
+      }
       "student database": {
         Row: {
           created_at: string
@@ -37,7 +278,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      user_role: "student" | "teacher" | "parent"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -164,6 +405,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      user_role: ["student", "teacher", "parent"],
+    },
   },
 } as const
