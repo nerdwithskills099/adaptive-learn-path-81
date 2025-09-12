@@ -106,6 +106,153 @@ export type Database = {
           },
         ]
       }
+      custom_questions: {
+        Row: {
+          chapter: string | null
+          correct_answer: number
+          created_at: string
+          creator_id: string
+          difficulty: string
+          id: string
+          is_active: boolean
+          options: Json
+          skill: string
+          subject: string
+          text: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          chapter?: string | null
+          correct_answer: number
+          created_at?: string
+          creator_id: string
+          difficulty?: string
+          id?: string
+          is_active?: boolean
+          options: Json
+          skill?: string
+          subject: string
+          text: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          chapter?: string | null
+          correct_answer?: number
+          created_at?: string
+          creator_id?: string
+          difficulty?: string
+          id?: string
+          is_active?: boolean
+          options?: Json
+          skill?: string
+          subject?: string
+          text?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      custom_test_questions: {
+        Row: {
+          created_at: string
+          id: string
+          order_index: number
+          question_id: string
+          test_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          order_index?: number
+          question_id: string
+          test_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          order_index?: number
+          question_id?: string
+          test_id?: string
+        }
+        Relationships: []
+      }
+      custom_tests: {
+        Row: {
+          created_at: string
+          creator_id: string
+          description: string | null
+          id: string
+          is_published: boolean
+          questions_count: number
+          time_limit: number | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          creator_id: string
+          description?: string | null
+          id?: string
+          is_published?: boolean
+          questions_count?: number
+          time_limit?: number | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          creator_id?: string
+          description?: string | null
+          id?: string
+          is_published?: boolean
+          questions_count?: number
+          time_limit?: number | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      learning_resources: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          difficulty_level: string | null
+          icon_url: string | null
+          id: string
+          is_featured: boolean
+          subject: string | null
+          title: string
+          url: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          difficulty_level?: string | null
+          icon_url?: string | null
+          id?: string
+          is_featured?: boolean
+          subject?: string | null
+          title: string
+          url: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          difficulty_level?: string | null
+          icon_url?: string | null
+          id?: string
+          is_featured?: boolean
+          subject?: string | null
+          title?: string
+          url?: string
+        }
+        Relationships: []
+      }
       practice_sessions: {
         Row: {
           completed_at: string | null

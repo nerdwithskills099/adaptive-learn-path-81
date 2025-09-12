@@ -27,7 +27,9 @@ import {
   GraduationCap,
   Users,
   FileText,
-  Download
+  Download,
+  Globe,
+  PlusCircle
 } from 'lucide-react';
 
 const AppSidebar = () => {
@@ -45,6 +47,8 @@ const AppSidebar = () => {
     { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
     { title: "Assessment", url: "/assessment", icon: Target },
     { title: "Practice", url: "/practice", icon: BookOpen },
+    { title: "Custom Tests", url: "/custom-tests", icon: PlusCircle },
+    { title: "Learning Resources", url: "/learning-resources", icon: Globe },
     { title: "Reports", url: "/reports", icon: BarChart3 },
     { title: "Settings", url: "/settings", icon: Settings },
   ];
@@ -53,6 +57,8 @@ const AppSidebar = () => {
     { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
     { title: "Students", url: "/students", icon: Users },
     { title: "Assessments", url: "/assessments", icon: Target },
+    { title: "Custom Tests", url: "/custom-tests", icon: PlusCircle },
+    { title: "Learning Resources", url: "/learning-resources", icon: Globe },
     { title: "Analytics", url: "/analytics", icon: BarChart3 },
     { title: "Reports", url: "/teacher-reports", icon: FileText },
     { title: "Settings", url: "/settings", icon: Settings },
@@ -61,6 +67,7 @@ const AppSidebar = () => {
   const parentItems = [
     { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
     { title: "Child Progress", url: "/child-progress", icon: BarChart3 },
+    { title: "Learning Resources", url: "/learning-resources", icon: Globe },
     { title: "Reports", url: "/parent-reports", icon: Download },
     { title: "Settings", url: "/settings", icon: Settings },
   ];
