@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/use-auth';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import AppSidebar from './app-sidebar';
-import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -42,11 +40,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
         <div className="flex-1 flex flex-col">
           <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 py-3">
             <div className="flex items-center gap-4">
-              <SidebarTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </SidebarTrigger>
+              <SidebarTrigger className="mr-1" />
               <div className="flex-1">
                 <h1 className="text-lg font-semibold">Adaptive Learning Platform</h1>
               </div>
