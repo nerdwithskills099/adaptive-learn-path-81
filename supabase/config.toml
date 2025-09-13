@@ -1,1 +1,4 @@
 project_id = "rvmakybwcwpqdjgwlizu"
+
+[functions.edubot-chat]
+verify_jwt = false
