@@ -12,6 +12,7 @@ import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import CustomTests from "./pages/CustomTests";
 import LearningResources from "./pages/LearningResources";
+import Edubot from "./pages/Edubot";
 import AuthPage from "./components/auth/auth-page";
 import NotFound from "./pages/NotFound";
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/practice" element={<Practice />} />
             <Route path="/custom-tests" element={<CustomTests />} />
             <Route path="/learning-resources" element={<LearningResources />} />
+            <Route path="/edubot" element={<Edubot />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/settings" element={<Settings />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

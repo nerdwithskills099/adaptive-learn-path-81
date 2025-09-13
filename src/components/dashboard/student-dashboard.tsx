@@ -14,7 +14,8 @@ import {
   Ear,
   Eye,
   Lightbulb,
-  BarChart3
+  BarChart3,
+  Bot
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -105,7 +106,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
             <span>Quick Actions</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <CardContent className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Button
             variant="secondary"
             size="lg"
@@ -123,6 +124,15 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({
           >
             <BookOpen className="h-5 w-5 mr-2" />
             Practice Mode
+          </Button>
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={() => window.location.href = '/edubot'}
+            className="bg-gradient-to-r from-yellow-400/20 to-orange-400/20 hover:from-yellow-400/30 hover:to-orange-400/30 text-white border-yellow-400/40"
+          >
+            <Bot className="h-5 w-5 mr-2" />
+            Ask EduBot
           </Button>
           <Button
             variant="secondary"

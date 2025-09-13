@@ -29,7 +29,8 @@ import {
   FileText,
   Download,
   Globe,
-  PlusCircle
+  PlusCircle,
+  Bot
 } from 'lucide-react';
 
 const AppSidebar = () => {
@@ -47,6 +48,7 @@ const AppSidebar = () => {
     { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
     { title: "Assessment", url: "/assessment", icon: Target },
     { title: "Practice", url: "/practice", icon: BookOpen },
+    { title: "EduBot AI", url: "/edubot", icon: Bot },
     { title: "Custom Tests", url: "/custom-tests", icon: PlusCircle },
     { title: "Learning Resources", url: "/learning-resources", icon: Globe },
     { title: "Reports", url: "/reports", icon: BarChart3 },
